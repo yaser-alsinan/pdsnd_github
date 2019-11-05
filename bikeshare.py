@@ -27,10 +27,10 @@ def get_filters():
         if mychoice.isnumeric():
             if int(mychoice) in range(1,4):
                 #convert to int
-                mychoice =int(mychoice)
-                if mychoice == 1:
+                #select city based on inputted choice
+                if int(mychoice) == 1:
                     city = 'chicago'
-                elif mychoice == 2:
+                elif int(mychoice) == 2:
                     city = 'new york city'
                 else:
                     city = 'washington'
@@ -41,32 +41,26 @@ def get_filters():
             print('Your input was not a number. Please choose a number [1:3]')
 
 
-
-
-
-    #select city based on inputted choice
-
-
     #----------------------------------------------------------------------
+
     # get user input for month (all, january, february, ... , june) as a number to minimize input errors
     while True:
         month_in = input('select a month for the analysis\n   January = 1\n   February = 2\n   ...\n   November = 11\n   December = 12\n   or type 0 for all\n').strip()
         #check if input is numeric
         if month_in.isnumeric():
             if int(month_in) in range(0,13):
+                #convert month number to string month name or all if 0 is inputted
+                if int(month_in) ==0:
+                    month = 'all'
+                else:
+                    #code from https://www.yodiaditya.com/convert-month-name-into-number-month-number-to-month-name-in-python/, modified to fit my need
+                    formatted_month = datetime(2019, int(month_in), 1)
+                    month = formatted_month.strftime("%B")
                 break
         else:
             print('Your input should be a number and between 0 and 12')
 
 
-    #convert month number to string month name or all if 0 is inputted
-    if int(month_in) ==0:
-        month = 'all'
-    else:
-    #code from https://www.yodiaditya.com/convert-month-name-into-number-month-number-to-month-name-in-python/, modified to fit my need
-        formatted_month = datetime(2019, int(month_in), 1)
-        month = formatted_month.strftime("%B")
-        #print(month)
     #----------------------------------------------------------------------
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
