@@ -13,7 +13,9 @@ This is the last line to fix the misreading.
 
 ### Files used
 bikeshare.py
-datafiles (CSV filetype)
+new_york_city.csv (ignored)
+chicago.csv (ignored)
+washington.csv (ignored)
 
 ### Credits
 forked from https://github.com/udacity/pdsnd_github
