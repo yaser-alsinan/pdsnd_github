@@ -7,7 +7,8 @@ PDSND_github
 ### Description
 This project tests understanding of git and github including version control,
 forking, push, merge ... etc.
-I missed the point of doing this 3 times at first
+I missed the point of doing this 3 times at first.
+So I went again and added these two lines and committed after each.
 
 ### Files used
 bikeshare.py
